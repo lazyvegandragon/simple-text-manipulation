@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text Manipulation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div class="text-editor-wrapper">
+            <div class="text-editor-wrapper__text">
+                <h2>Enter your text</h2>
+                <p>Enter your text in the box below. You can then manipulate it using the buttons below.</p>
+            </div>
+
+            <div class="text-editor-wrapper__textfield">
+                <textarea id="userInput" class="text-editor" oninput='manipulateText()' placeholder="Input text here ..."></textarea>
+                <div class="text-editor-buttons">
+                    <button href="#" id="copy-button-input" class="text-editor-button" onclick="copyText('userInput', 'copyInputAlert')">Copy input</button>
+                    <button href="#" id="clear-button-input" class="text-editor-button" onclick="clearText('userInput')">Clear input</button>
+                </div>
+                <div id="copyInputAlert" style="display: none;">Text copied to clipboard!</div>
+            </div>
+        </div>
+        
+        <section class="function-button-wrap">
+            <button id="lowerCase" class="function-button" onclick="manipulateText('lowerCase')">Lower Case</button>
+            <button id="upperCase" class="function-button" onclick="manipulateText('upperCase')">Upper Case</button>
+            <button id="sarcasmCase" class="function-button" onclick="manipulateText('sarcasmCase')">Sarcasm Case</button>
+            <button id="titleCase" class="function-button" onclick="manipulateText('titleCase')">Title Case</button>
+            <button id="sentenceCase" class="function-button" onclick="manipulateText('sentenceCase')">Sentence Case</button>
+            <button id="oddLowerCase" class="function-button" onclick="manipulateText('oddLowerCase')">Odd Lower Case</button>
+            <button id="oddUpperCase" class="function-button" onclick="manipulateText('oddUpperCase')">Odd Upper Case</button>
+            <button id="inverseCase" class="function-button" onclick="manipulateText('inverseCase')">Inverse Case</button>
+            <button id="camelCase" class="function-button" onclick="manipulateText('camelCase')">Camel Case</button>
+            <button id="pascalCase" class="function-button" onclick="manipulateText('pascalCase')">Pascal Case</button>
+            <button id="kebabCase" class="function-button" onclick="manipulateText('kebabCase')">Kebab Case</button>
+            <button id="snakeCase" class="function-button" onclick="manipulateText('snakeCase')">Snake Case</button>
+            <button id="bionicReading" class="function-button" onclick="manipulateText('bionicReading')">Bionic Reading</button>
+            <button id="stripHtml" class="function-button" onclick="manipulateText('stripHtml')">Strip HTML</button>
+            <button id="textToMorse" class="function-button" onclick="manipulateText('textToMorse')">Text to Morse</button>
+            <button id="morseToText" class="function-button" onclick="manipulateText('morseToText')">Morse to Text</button>
+            <button id="removeExtraSpaces" class="function-button" onclick="manipulateText('removeExtraSpaces')">Remove Extra Spaces</button>
+            <button id="textToBinaryASCII" class="function-button" onclick="manipulateText('textToBinaryASCII')">Text to Binary ASCII</button>
+            <button id="binaryASCIIToText" class="function-button" onclick="manipulateText('binaryASCIIToText')">Binary ASCII to Text</button>
+            <button id="decimalToBinary" class="function-button" onclick="manipulateText('decimalToBinary')">Decimal to Binary</button>
+            <button id="binaryToDecimal" class="function-button" onclick="manipulateText('binaryToDecimal')">Binary to Decimal</button>
+            <button id="textToBraille" class="function-button" onclick="manipulateText('textToBraille')">Text to Braille</button>
+            <button id="brailleToText" class="function-button" onclick="manipulateText('brailleToText')">Braille to Text</button>
+        </section>
+      
+        <div  class="text-editor-wrapper">
+            <div class="text-editor-wrapper__text">
+                <h2>Manipulated text</h2>
+                <p>The manipulated text will appear here and will be copied to your clipboard automatically!</p>
+            </div>
+            <div class="text-editor-wrapper__textfield">
+                <div id="outputText" class="text-editor" contenteditable="true"></div>
+                <div class="text-editor-buttons">
+                    <button href="#" id="copy-button-output" class="text-editor-button" onclick="copyText('outputText', 'copyOutputAlert')">Copy output</button>
+                    <button href="#" id="clear-button-output" class="text-editor-button" onclick="clearText('outputText')">Clear output</button>
+                </div>
+                <div id="copyOutputAlert" style="display: none;">Text copied to clipboard!</div>
+            </div>            
+        </div>
+    </main>
+    <script src="js/texareaScroll.js"></script>
+    <script src="js/copyAndClear.js"></script>
+    <script src="js/simpleTextTransformationsLibrary.js"></script>
+    <script src="js/manipulateText.js"></script> 
+</body>
+</html>

@@ -1,0 +1,171 @@
+:root {
+    /*PRIMARY COLORS*/
+    --background-color: #000;
+    --background-color-highlight: #5c5c5c;
+    --font-color-1: #cecece;
+    --font-color-2: #BABABA;
+    --font-color-3: #a1a1a1;
+
+    --primary-color: #382bf0;
+    --color-primary-200: #5e43f3;
+    --color-primary-300: #7a5af5;
+    --color-primary-400: #9171f8;
+    --color-primary-500: #a688fa;
+    --color-primary-600: #ba9ffb;
+
+    /*ELEMENTS COLORS*/
+    --background-color-elements: #0c0c0c;
+    --border-elements: 1px solid #2b2b2b;
+    --box-shadow-elements: 0px 0px 3px #a1a1a1;
+
+    /*TEXTAREA STYLE*/
+    --primary-border-radius: 0.5em;
+    --secondary-border-radius: var(--primary-border-radius) * 2;
+
+    /*BUTTON STYLE*/
+    --primary-button-radius: 100px;
+
+    /*POSITIONING*/
+    --content-max-width: 1160px;
+    --padding-inline: 1.5em;
+    --container-width: min(var(--content-max-width), 100% - var(--padding-inline)*2);
+
+}
+
+:root[data-theme="light"] {}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color-3);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 4.25rem;
+}
+
+h2 {
+    font-size: 2.75rem;
+}
+
+h3 {
+    font-size: 1.625rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+main {
+    width: var(--container-width);
+    margin: 2em auto;
+}
+
+.text-editor-wrapper {
+    margin: 1em;
+    border: var(--border-elements);
+    padding: 0.5em;
+    border-radius: var(--primary-border-radius);
+
+    .text-editor-wrapper__text {
+        margin: 1em;
+
+        h2 {
+            margin: 0.5em 0;
+        }
+    }
+
+    .text-editor-wrapper__textfield {
+        margin: 1em;
+
+        .text-editor {
+            width: calc(100% - 1em);
+            margin: 1em 0;
+            padding: 1em;
+            border: var(--border-elements);
+            border-radius: var(--primary-border-radius);
+            resize: vertical;
+            background-color: var(--background-color-elements);
+            color: var(--font-color-3);
+            box-shadow: var(--box-shadow-elements);
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+        .text-editor-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        .text-editor-button {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0.75em 1.5em;
+            border: var(--border-elements);
+            box-shadow: var(--box-shadow-elements);
+            border-radius: var(--primary-button-radius);
+            background-color: var(--background-color);
+            color: var(--font-color-1);
+            transition: all .25s ease-in-out;
+        }
+
+        .text-editor-button:hover {
+            color: var(--background-color);
+            background-color: var(--font-color-1);
+            padding: 0.75em 2em;
+            border-color: var(--font-color-1);
+        }
+
+        .text-output-area {
+            font-size: 1rem;
+            font-family: monospace;
+        }
+
+    }
+
+}
+
+.function-button-wrap {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .function-button {
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0.75em 1.5em;
+        margin: 0.5em;
+        border: var(--border-elements);
+        box-shadow: var(--box-shadow-elements);
+        background-color: var(--background-color-elements);
+        color: var(--font-color-3);
+        transition: all .1s ease-in-out;
+    }
+
+    .function-button:hover {
+        background-color: #2b2b2b;
+
+    }
+
+    .function-button.active {
+        background-color: var(--font-color-3);
+        color: var(--background-color);
+    }
+}
